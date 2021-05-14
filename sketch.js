@@ -1,7 +1,7 @@
 var starImage,backgroundImage;
 var star,starBody;
 //create variable for fairy sprite and fairyImage
-var fairy,fairyImage,fairyStandingImg,fairyVoice;
+var fairy,fairyImage,fairyVoice;
 
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -14,7 +14,6 @@ function preload()
 	backgroundImage = loadImage("starNight.png");
 	//load animation for fairy here
 	fairyImg = loadAnimation("fairyImage1.png","fairyImage2.png");
-	fairyStandingImg = loadImage("fairy.png");
 	fairyVoice = loadSound("JoyMusic.mp3");
 }
 
@@ -55,7 +54,6 @@ function draw() {
   //write code to stop star in the hand of fairy
   if(star.y > 470 && starBody.position.y > 470 ){
 	Matter.Body.setStatic(starBody,true);
-	fairy.changeAnimation("fairyflying",fairyStandingImg);
    }
 
   drawSprites();
